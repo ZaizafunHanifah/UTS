@@ -29,3 +29,5 @@ CREATE TABLE pendaftaran (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE
 );
+
+INSERT INTO admin (username, password) VALUES ('admin', 'admin');
