@@ -29,8 +29,6 @@ class Auth extends CI_Controller {
         }
     }
 
-
-
     public function register() {
         $this->load->view('register');
     }
@@ -44,7 +42,6 @@ class Auth extends CI_Controller {
             'password' => $password
         ];
 
-        // Cek apakah username sudah ada
         if ($this->User_model->get_by_username($username)) {
             $this->session->set_flashdata('error', 'Username sudah digunakan!');
             redirect('auth/register');
@@ -52,6 +49,6 @@ class Auth extends CI_Controller {
 
         $this->User_model->register($data);
         $this->session->set_flashdata('success', 'Registrasi berhasil. Silakan login.');
-        redirect('auth'); // Redirect ke halaman login setelah registrasi berhasil
+        redirect('auth'); 
     }
 }

@@ -9,7 +9,6 @@ class Event extends CI_Controller {
         $this->load->library('session');
         $this->load->helper('url');
 
-        // Proteksi admin
         if (!$this->session->userdata('is_admin_logged_in')) {
             redirect('adminauth');
         }

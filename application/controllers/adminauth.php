@@ -16,7 +16,7 @@ class AdminAuth extends CI_Controller {
 
     public function login() {
         $username = $this->input->post('username');
-        $password = $this->input->post('password'); // password dalam bentuk plain text
+        $password = $this->input->post('password');
         
         log_message('debug', "Username: $username, Password: $password");
     
@@ -28,7 +28,7 @@ class AdminAuth extends CI_Controller {
                 'admin_username' => $admin->username,
                 'is_admin_logged_in' => true
             ]);
-            redirect('event'); // arahkan ke halaman CRUD Event
+            redirect('event');
         } else {
             $this->session->set_flashdata('error', 'Username atau password salah');
             redirect('adminauth');
